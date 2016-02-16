@@ -21,6 +21,7 @@ Example json file at: ``/path/to/config.json``
         }
     }
 
+
 .. code-block:: python
     from multicfg.config import load_configuration
 
@@ -31,6 +32,7 @@ Example json file at: ``/path/to/config.json``
     config.id == "mr_example"
     config.token == "ABCDEFGHIJ"
     config.some.nested.bits.value == 15
+
 
 In active development
 ---------------------
@@ -55,10 +57,10 @@ guess your meaning if you simply pass a string, by trying all available
 options until one works.
 
     For example, with json type, location could be any of:
-        ``{'file': '/etc/myconfig.json'}``
-        ``'/etc/myconfig.json'}``
-        ``{'string': '{"some_data": 15, "another_thing": "some_string"}'}``
-        ``'{"some_data": 15, "another_thing": "some_string"}'``
+|        ``{'file': '/etc/myconfig.json'}``
+|        ``'/etc/myconfig.json'``
+|        ``{'string': '{"some_data": 15, "another_thing": "some_string"}'}``
+|        ``'{"some_data": 15, "another_thing": "some_string"}'``
 
 `path`: optional config path-prefix
 
@@ -69,6 +71,8 @@ Further Examples
 ----------------
 
 Example: given 'json' type that looks like:
+
+.. code-block:: json
     {
         "a": {
             "b": {
@@ -79,15 +83,9 @@ Example: given 'json' type that looks like:
         }
     }
 
-passing ('json', '/path/to/above/config.json') will return an object where
-`a.b.c.d == 15`
-
 .. code-block:: python
     config = load_configuration([
-            ('json', {'file': '/path/to/above/config.json'})
+            ('json', {'file': '/path/to/above/config.json'}, 'h.i.j')
     ])
 
-    config.a.b.c.d == 15
-
-if the last tuple element, representing 'path', is `'h.i.j'`,
-the value is accessible at `h.i.j.a.b.c.d`
+    config.h.i.j.a.b.c.d == 15
