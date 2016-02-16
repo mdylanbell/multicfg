@@ -7,6 +7,7 @@ Load multiple configurations from various sources and merge them together.
 Example json file at: ``/path/to/config.json``
 
 .. code-block:: json
+    :caption: /path/to/config.json
 
     {
         "id": "mr_example",
@@ -23,6 +24,8 @@ Example json file at: ``/path/to/config.json``
 
 
 .. code-block:: python
+    :caption: python example
+
     from multicfg.config import load_configuration
 
     config = load_configuration([
@@ -82,6 +85,7 @@ Example: given 'json' type that looks like:
             }
         }
     }
+
 
 .. code-block:: python
     config = load_configuration([
