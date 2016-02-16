@@ -1,0 +1,33 @@
+*.py[cod]
+
+# Packages
+*.egg
+*.egg-info
+dist
+build
+.eggs
+eggs
+parts
+bin
+var
+sdist
+develop-eggs
+.installed.cfg
+lib
+lib64
+
+# Unit test / coverage reports
+.coverage
+htmlcov/
+.tox
+.cache
+nosetests.xml
+
+# Installer logs
+pip-log.txt
+
+# Sphinx
+docs/_build
+
+# Editor noise
+.ropeproject
