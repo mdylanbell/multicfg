@@ -7,6 +7,7 @@ Load multiple configurations from various sources and merge them together.
 Example json file at: ``/path/to/config.json``
 
 .. code-block:: json
+
     {
         "id": "mr_example",
         "token": "ABCDEFGHIJ",
@@ -21,6 +22,7 @@ Example json file at: ``/path/to/config.json``
     }
 
 .. code-block:: python
+
     from multicfg.config import load_configuration
 
     config = load_configuration([
@@ -68,9 +70,10 @@ which can be traversed with attribute notation.
 Further Examples
 ----------------
 
-Example: given 'json' type that looks like:
+Example: given 'json' config file that looks like:
 
 .. code-block:: json
+
     {
         "a": {
             "b": {
@@ -83,6 +86,7 @@ Example: given 'json' type that looks like:
 
 
 .. code-block:: python
+
     config = load_configuration([
             ('json', {'file': '/path/to/above/config.json'}, 'h.i.j')
     ])
